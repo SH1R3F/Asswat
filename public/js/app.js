@@ -480,6 +480,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["url", "parent"],
@@ -526,6 +542,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1147,8 +1174,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      DEFAULT_PIC: "https://taskexchange.cochrane.org/assets/default-profile-bfeeabd02c3b38305b18e4c2345fd54dbbd1a0a7bf403a31f08fca4fada50449.png",
-      WEB_URL: "https://api.aswat.test/"
+      DEFAULT_PIC: "https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png",
+      WEB_URL: "http://127.0.0.1:8000/"
     };
   },
   components: {
@@ -1276,7 +1303,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      DEFAULT_PIC: "https://taskexchange.cochrane.org/assets/default-profile-bfeeabd02c3b38305b18e4c2345fd54dbbd1a0a7bf403a31f08fca4fada50449.png",
+      DEFAULT_PIC: "https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png",
       type: "message"
     };
   },
@@ -22166,12 +22193,22 @@ var render = function() {
     _c("div", { staticClass: "track__actions" }, [
       _c("button", {
         staticClass: "track__button track__button--play",
+        staticStyle: {
+          display: "flex",
+          "justify-content": "center",
+          "align-items": "center"
+        },
         attrs: { disabled: _vm.playing },
         on: { click: _vm.playAudio }
       }),
       _vm._v(" "),
       _c("button", {
         staticClass: "track__button track__button--pause",
+        staticStyle: {
+          display: "flex",
+          "justify-content": "center",
+          "align-items": "center"
+        },
         attrs: { disabled: !_vm.playing },
         on: { click: _vm.pauseAudio }
       })
@@ -22185,6 +22222,11 @@ var render = function() {
     _vm.parent.send === "send"
       ? _c("button", {
           staticClass: "track__button track__button--remove",
+          staticStyle: {
+            display: "flex",
+            "justify-content": "center",
+            "align-items": "center"
+          },
           on: {
             click: function($event) {
               return _vm.setRecorded(false)
@@ -22220,18 +22262,33 @@ var render = function() {
     _c("button", {
       staticClass: "voice-button",
       class: { resume: _vm.paused, pause: !_vm.paused },
+      staticStyle: {
+        display: "flex",
+        "justify-content": "center",
+        "align-items": "center"
+      },
       attrs: { disabled: !_vm.recording },
       on: { click: _vm.toggleRecording }
     }),
     _vm._v(" "),
     _c("button", {
       staticClass: "voice-button record",
+      staticStyle: {
+        display: "flex",
+        "justify-content": "center",
+        "align-items": "center"
+      },
       attrs: { disabled: _vm.recording || _vm.recorded },
       on: { click: _vm.startRecording }
     }),
     _vm._v(" "),
     _c("button", {
       staticClass: "voice-button stop",
+      staticStyle: {
+        display: "flex",
+        "justify-content": "center",
+        "align-items": "center"
+      },
       attrs: { disabled: !_vm.recording },
       on: { click: _vm.stopRecording }
     })
@@ -41001,13 +41058,13 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.use(vue_head__WEBPACK_IMPORTED_MODULE_2___default.a);
 Vue.use(vue_resource__WEBPACK_IMPORTED_MODULE_3__["default"]);
-Vue.http.options.root = 'https://api.aswat.test/api';
+Vue.http.options.root = "http://127.0.0.1:8000/api";
 Vue.use(vue_audio_recorder__WEBPACK_IMPORTED_MODULE_6___default.a);
 /**
  *  Vue Components
  */
 
-Vue.component('Btn', _components_Btn_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
+Vue.component("Btn", _components_Btn_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /**
  * Mixins
  */
@@ -41020,7 +41077,7 @@ Vue.mixin(_mixins_auth__WEBPACK_IMPORTED_MODULE_5__["Auth"]);
  */
 
 var app = new Vue({
-  el: '#app',
+  el: "#app",
   store: _store_index__WEBPACK_IMPORTED_MODULE_4__["store"],
   router: _router_router__WEBPACK_IMPORTED_MODULE_0__["router"]
 });
@@ -42933,8 +42990,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! F:\Development\Aswat\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! F:\Development\Aswat\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\Asswat\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\Asswat\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),
