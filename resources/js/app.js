@@ -19,7 +19,7 @@ window.Vue = require("vue");
  */
 Vue.use(VueHead);
 Vue.use(VueResource);
-Vue.http.options.root = "https://sh1r3f.davidlouis.co/asswat/api";
+Vue.http.options.root = "http://127.0.0.1:8000/api";
 Vue.use(AudioRecorder);
 
 /**
