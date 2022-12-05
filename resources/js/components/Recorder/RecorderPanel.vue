@@ -52,7 +52,7 @@ export default {
                     this.rec = new Recorder(input, { numChannels: 1 });
                     this.rec.record();
                 })
-                .catch(err => {});
+                .catch(err => console.log("err"));
         },
         toggleRecording() {
             if (this.rec.recording) {

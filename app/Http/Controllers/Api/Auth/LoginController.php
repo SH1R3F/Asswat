@@ -21,7 +21,7 @@ class LoginController extends Controller
     /**
      * Handle a login request to the application
      * 
-     * @param  Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return Illuminate\Http\JsonResponse
      */
     public function login(Request $request)
@@ -53,7 +53,7 @@ class LoginController extends Controller
     /**
      * Send the response after the user is authenticated
      * 
-     * @param  Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @param  String $token
      * @return Illuminate\Http\JsonResponse
      */
@@ -81,7 +81,7 @@ class LoginController extends Controller
     /**
      * Send the response to determine the user they are locked out
      * 
-     * @param  Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return Illuminate\Http\JsonResponse
      */
     public function sendLockoutResponse(Request $request)

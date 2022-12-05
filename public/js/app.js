@@ -595,7 +595,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         });
 
         _this.rec.record();
-      })["catch"](function (err) {});
+      })["catch"](function (err) {
+        return console.log("err");
+      });
     },
     toggleRecording: function toggleRecording() {
       if (this.rec.recording) {
@@ -1167,6 +1169,43 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1414,6 +1453,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1464,7 +1519,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   mounted: function mounted() {
-    this.fetchMe();
+    var _this2 = this;
+
+    this.fetchMe().then(function (s) {
+      return console.log(_this2.user);
+    });
   }
 });
 
@@ -22902,20 +22961,24 @@ var render = function() {
                 "div",
                 { staticClass: "about" },
                 [
-                  _c("h3", [_vm._v(_vm._s(_vm.user.name))]),
+                  _vm.user.name
+                    ? _c("h3", [_vm._v(_vm._s(_vm.user.name))])
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: {
-                          name: "user.send",
-                          params: { username: _vm.user.username }
-                        }
-                      }
-                    },
-                    [_vm._v(_vm._s(_vm.WEB_URL + _vm.user.username))]
-                  ),
+                  _vm.user.username
+                    ? _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: {
+                              name: "user.send",
+                              params: { username: _vm.user.username }
+                            }
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.WEB_URL + _vm.user.username))]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
                     _c(
@@ -22929,7 +22992,11 @@ var render = function() {
                             _c(
                               "button",
                               { staticClass: "col-12 btn btn-primary" },
-                              [_vm._v("Settings")]
+                              [
+                                _vm._v(
+                                  "\n                                        Settings\n                                    "
+                                )
+                              ]
                             )
                           ]
                         )
@@ -22944,7 +23011,11 @@ var render = function() {
                           staticClass: "col-12 btn btn-danger",
                           on: { click: _vm.deactive }
                         },
-                        [_vm._v("Deactivate")]
+                        [
+                          _vm._v(
+                            "\n                                    Deactivate\n                                "
+                          )
+                        ]
                       )
                     ])
                   ])
@@ -22964,23 +23035,25 @@ var render = function() {
                       { staticClass: "text-center alert alert-success p-3" },
                       [
                         _vm._v(
-                          "\n            You have no messages yet. Share you link to start getting honest messages.\n            "
+                          "\n                        You have no messages yet. Share you link to start\n                        getting honest messages.\n                        "
                         ),
                         _c("br"),
                         _vm._v(" "),
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "h5",
-                            attrs: {
-                              to: {
-                                name: "user.send",
-                                params: { username: _vm.user.username }
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.WEB_URL + _vm.user.username))]
-                        )
+                        _vm.user.username
+                          ? _c(
+                              "router-link",
+                              {
+                                staticClass: "h5",
+                                attrs: {
+                                  to: {
+                                    name: "user.send",
+                                    params: { username: _vm.user.username }
+                                  }
+                                }
+                              },
+                              [_vm._v(_vm._s(_vm.WEB_URL + _vm.user.username))]
+                            )
+                          : _vm._e()
                       ],
                       1
                     )
@@ -23038,7 +23111,9 @@ var render = function() {
                             },
                             [
                               _c("i", { staticClass: "fa fa-trash fl-left" }),
-                              _vm._v("\n                Delete\n              ")
+                              _vm._v(
+                                "\n                                Delete\n                            "
+                              )
                             ]
                           )
                         ]
@@ -23262,7 +23337,8 @@ var render = function() {
               _vm._v(" "),
               _c("input", {
                 staticClass: "form-control",
-                attrs: { type: "text", id: "name", placeholder: _vm.user.name },
+                attrs: { type: "text", id: "name" },
+                domProps: { value: _vm.user.name },
                 on: {
                   input: function($event) {
                     _vm.data.name = $event.target.value
@@ -23284,11 +23360,8 @@ var render = function() {
               _vm._v(" "),
               _c("input", {
                 staticClass: "form-control",
-                attrs: {
-                  type: "email",
-                  id: "email",
-                  placeholder: _vm.user.email
-                },
+                attrs: { type: "email", id: "email" },
+                domProps: { value: _vm.user.email },
                 on: {
                   input: function($event) {
                     _vm.data.email = $event.target.value
@@ -23308,11 +23381,8 @@ var render = function() {
               _vm._v(" "),
               _c("input", {
                 staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  id: "username",
-                  placeholder: _vm.user.username
-                },
+                attrs: { type: "text", id: "username" },
+                domProps: { value: _vm.user.username },
                 on: {
                   input: function($event) {
                     _vm.data.username = $event.target.value
@@ -23399,7 +23469,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Update")]
+              [_vm._v("\n                    Update\n                ")]
             )
           ])
         ])
@@ -42990,8 +43060,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\Asswat\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\Asswat\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\My Github History\Asswat\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\My Github History\Asswat\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),
